@@ -1,0 +1,158 @@
+.profile-form {
+  max-width: 800px; /* Begrenzt die Breite des Formulars */
+  width: -webkit-fill-available; /* Breite füllt den verfügbaren Platz */
+  margin: auto; /* Zentriert das Formular */
+  padding: 20px; /* Fügt Abstand innerhalb des Formulars hinzu */
+  background: #f8f9fa; /* Hintergrundfarbe des Formulars */
+  border-radius: 8px; /* Abgerundete Ecken */
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* Schatten um das Formular */
+}
+
+.form-group {
+  margin-bottom: 20px; /* Abstand zwischen den Formularfeldern */
+}
+
+.form-control {
+  width: 90%; /* Volle Breite innerhalb des Formulargruppen-Containers */
+  padding: 8px; /* Innerer Abstand in den Eingabefeldern */
+  margin-top: 8px; /* Abstand oberhalb der Eingabefelder */
+  border: 1px solid #ced4da; /* Rahmenfarbe der Eingabefelder */
+  border-radius: 4px; /* Abgerundete Ecken der Eingabefelder */
+}
+
+.btn-success {
+  padding: 10px 15px; /* Polsterung innerhalb des Buttons */
+  color: white; /* Textfarbe des Buttons */
+  background-color: #28a745; /* Hintergrundfarbe des Buttons */
+  border: none; /* Kein Rand für den Button */
+  border-radius: 4px; /* Abgerundete Ecken des Buttons */
+  cursor: pointer; /* Cursor-Stil für den Button */
+  margin-right: 10px; /* Abstand zum anderen Button */
+}
+
+.btn-success:hover {
+  background-color: #218838; /* Dunklere Hintergrundfarbe beim Hover */
+}
+
+.button-container {
+  display: flex; /* Ermöglicht flexibles Layout */
+  justify-content: flex-start; /* Positioniert die Buttons links */
+  margin-top: 20px; /* Abstand zum oberen Inhalt */
+}
+
+label {
+  display: block; /* Stellt sicher, dass Labels auf einer eigenen Zeile angezeigt werden */
+  margin-top: 15px; /* Erhöhter Abstand unter den Labels */
+}
+
+.profile-container {
+  display: flex; /* Ermöglicht flexibles Layout */
+  justify-content: center; /* Zentriert die Inhalte horizontal */
+  align-items: start; /* Startet die Inhalte am oberen Rand */
+  padding: 20px; /* Innenabstand des Containers */
+  gap: 20px; /* Abstand zwischen Bild und Formular */
+  height: 100vh; /* Gesamthöhe des Viewports nutzen, um vertikal zu zentrieren */
+}
+
+.profile-image {
+  flex: 0 1 20%; /* Setzt die Basisbreite auf 20% und erlaubt keine Expansion */
+  max-width: 20%; /* Begrenzt die maximale Breite auf 20% */
+  margin-top: 50px; /* Abstand zum oberen Rand */
+}
+
+.profile-image img {
+  width: 100%; /* Macht das Bild responsiv innerhalb seines Containers */
+  height: auto; /* Behält das Seitenverhältnis bei */
+  display: block; /* Verhindert unerwünschte Weißräume um das Bild */
+  max-width: 300px; /* Begrenzung der maximalen Breite des Bildes */
+}
+
+.profile-form-container {
+  flex: 1; /* Lässt den Formular-Container den restlichen Platz einnehmen */
+  display: flex;
+  flex-direction: column; /* Vertikale Anordnung der Inhalte */
+  justify-content: center; /* Vertikal zentrieren innerhalb des Containers */
+  align-items: center; /* Horizontal zentrieren innerhalb des Containers */
+  max-width: 1000px; /* Optional: Begrenzt die Max-Breite des Formulars */
+}
+
+.preview {
+  max-width: 300px; /* Setzt die maximale Breite der Bildvorschau */
+  width: auto; /* Beibehaltung des Seitenverhältnisses */
+  height: auto; /* Beibehaltung des Seitenverhältnisses */
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Versteckt das Modal standardmäßig */
+  position: fixed; /* Fixiert das Modal relativ zum Viewport */
+  z-index: 1; /* Stellt sicher, dass das Modal über anderen Inhalten liegt */
+  left: 0;
+  top: 0;
+  width: 100%; /* Volle Breite */
+  height: 100%; /* Volle Höhe */
+  overflow: auto; /* Ermöglicht das Scrollen bei Überlauf */
+  background-color: rgb(0,0,0); /* Fallback für den Hintergrund */
+  background-color: rgba(0,0,0,0.4); /* Schwarzer Hintergrund mit Transparenz */
+}
+
+.modal.show {
+  display: block; /* Zeigt das Modal an, wenn die Klasse 'show' hinzugefügt wird */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Zentriert das Modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Breite des Modal */
+  max-width: 500px; /* Maximale Breite des Modal */
+  border-radius: 8px; /* Abgerundete Ecken */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Schatten um das Modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .profile-container {
+    flex-direction: column; /* Vertikale Anordnung für kleinere Bildschirme */
+    height: auto; /* Höhe auf automatisch setzen */
+  }
+
+  .profile-image {
+    max-width: 100%; /* Bild über die gesamte Breite strecken */
+    margin-top: 0; /* Kein oberer Abstand */
+  }
+
+  .profile-form-container {
+    max-width: 100%; /* Formular über die gesamte Breite strecken */
+  }
+
+  .profile-form {
+    width: 100%; /* Formular über die gesamte Breite strecken */
+    padding: 10px; /* Weniger Padding für kleinere Bildschirme */
+  }
+
+  .button-container {
+    flex-direction: column; /* Vertikale Anordnung der Buttons */
+    align-items: stretch; /* Buttons über die gesamte Breite strecken */
+  }
+
+  .btn-success {
+    margin-bottom: 10px; /* Abstand zwischen den Buttons */
+    width: 100%; /* Breite füllt den verfügbaren Platz */
+  }
+}

@@ -1,0 +1,26 @@
+<div class="header">
+  <div class="header-content">
+    <h1>LocalXperience - Finde, was nicht im Reiseführer steht</h1>
+  </div>
+</div>
+
+<div class="tab">
+  <button mat-button [routerLink]="'../home'" class="Button">
+    <mat-icon aria-hidden="false">home</mat-icon>
+    Home
+  </button>
+  <button mat-button [routerLink]="'../vermittlungsplatz'" class="Button">
+    <mat-icon aria-hidden="false">people</mat-icon>
+    Vermittlungsplatz
+  </button>
+</div>
+
+<div class="content">
+  <router-outlet></router-outlet>
+</div>
+
+<div class="footer">
+  <a href="impressum.html">Impressum</a> | 
+  <a href="privacy.html">Datenschutzerklärung</a> | 
+  <a href="about.html">Über uns</a>
+</div>

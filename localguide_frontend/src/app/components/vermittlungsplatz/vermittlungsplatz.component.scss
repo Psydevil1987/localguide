@@ -1,0 +1,209 @@
+.container {
+  display: flex; /* Ermöglicht flexibles Layout */
+  height: 100vh; /* Volle Höhe des Viewports */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+}
+
+.content-area {
+  flex-grow: 1; /* Nimmt den verbleibenden Platz ein */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Zentriert den Inhalt vertikal und horizontal */
+  text-align: center;
+  overflow-y: auto; /* Ermöglicht das Scrollen, wenn der Inhalt überläuft */
+  width: 100%;
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  padding: 0 10px; /* Füge Padding hinzu, um den Inhalt nicht abzuschneiden */
+}
+
+.search-box {
+  margin-top: 20px; /* Abstand vom Titel zum Suchfeld */
+  display: flex;
+  flex-direction: column; /* Vertikale Anordnung für Mobilgeräte */
+  width: 20%;
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  gap: 10px; /* Abstand zwischen Textfeld und Button */
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 100%; /* Volle Breite für das Textfeld */
+  max-width: 100%; /* Maximale Breite 100% des Containers */
+  border: 2px solid #ccc; /* Rand des Textfeldes */
+  border-radius: 4px; /* Abgerundete Ecken für das Textfeld */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  margin-bottom: 10px; /* Abstand zum Button */
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #007BFF; /* Blaue Hintergrundfarbe */
+  color: white; /* Weiße Textfarbe */
+  border: none;
+  border-radius: 4px; /* Abgerundete Ecken für den Button */
+  cursor: pointer; /* Cursor ändert sich zum Klick-Symbol */
+  width: 100%; /* Volle Breite für den Button */
+  max-width: 100%; /* Maximale Breite 100% des Containers */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+button:hover {
+  background-color: #0056b3; /* Dunklere Blaufarbe beim Hover */
+}
+
+.btn-success {
+  padding: 10px 15px; /* Polsterung innerhalb des Buttons */
+  color: white; /* Textfarbe des Buttons */
+  background-color: #28a745; /* Hintergrundfarbe des Buttons */
+  border: none; /* Kein Rand für den Button */
+  border-radius: 4px; /* Abgerundete Ecken des Buttons */
+  cursor: pointer; /* Cursor-Stil für den Button */
+  margin-right: 10px; /* Abstand zum anderen Button */
+}
+
+.menu-area {
+  width: 10%; /* Breite des Menübereichs */
+  background-color: #e0e0e0; /* Hintergrundfarbe des Menübereichs */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+.guide-info {
+  flex-grow: 1; /* Lässt den Textbereich den verbleibenden Platz einnehmen */
+  text-align: left; /* Text linksbündig ausrichten */
+  padding-left: 20px; /* Fügt Abstand zwischen Bild und Text hinzu */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+.Texttitel {
+  font-size: 18px; /* Größere Schrift für die Titel */
+  color: #000000; /* Dunkelgraue Textfarbe */
+  margin-bottom: 0px; /* Kein Abstand unter dem Titel */
+}
+
+.Text {
+  font-size: 18px; /* Größere Schrift für den Text */
+  color: #000000; /* Dunkelgraue Textfarbe */
+  margin-top: 2px; /* Geringer Abstand über dem Text */
+}
+
+.guide-container {
+  display: flex;
+  align-items: center; /* Inhalte vertikal zentrieren */
+  background-color: #f7f7f7; /* Leichtes Grau als Hintergrundfarbe */
+  border-radius: 8px; /* Ecken abrunden */
+  padding: 15px; /* Innenabstand */
+  margin-bottom: 10px; /* Abstand zwischen den Einträgen */
+  width: 80%; /* 80% der content-area Breite */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Leichter Schatten für bessere Abhebung */
+}
+
+.guide-image {
+  width: 100%; /* Volle Breite für das Bild */
+  max-width: 400px; /* Maximale Breite für das Bild */
+  height: auto; /* Höhe automatisch anpassen */
+  border-radius: 4px; /* Ecken des Bildes abrunden */
+  margin-right: 20px; /* Abstand zwischen Bild und Text */
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+/* Responsive Anpassungen für Mobilgeräte */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column; /* Vertikale Anordnung für kleine Bildschirme */
+    height: auto; /* Höhe an den Inhalt anpassen */
+  }
+
+  .content-area {
+    width: 100%; /* Volle Breite für den Inhalt */
+    padding: 10px; /* Padding für bessere Lesbarkeit */
+    order: 2; /* Reihenfolge ändern: content-area nach menu-area */
+  }
+
+  .search-box {
+    flex-direction: column; /* Vertikale Anordnung der Suchbox und des Buttons */
+    width: 100%; /* Volle Breite der Suchbox */
+  }
+
+  input[type="text"] {
+    width: 100%; /* Volle Breite für das Textfeld */
+    margin-bottom: 10px; /* Abstand zum Button */
+  }
+
+  .menu-area {
+    width: 100%; /* Volle Breite für das Menü */
+    text-align: center; /* Zentriert den Inhalt im Menübereich */
+    padding: 10px 0; /* Padding für bessere Lesbarkeit */
+    order: 1; /* Reihenfolge ändern: menu-area vor content-area */
+  }
+
+  .guide-container {
+    flex-direction: column; /* Vertikale Anordnung der Guides */
+    align-items: flex-start; /* Links ausrichten */
+    width: 100%; /* Volle Breite für die Guides */
+    padding: 10px; /* Weniger Padding für besseren Platz */
+  }
+
+  .guide-image {
+    width: 100%; /* Volle Breite für die Bilder */
+    margin: 0 0 10px 0; /* Abstand zum Textbereich */
+  }
+
+  .guide-info {
+    padding-left: 0; /* Kein Padding auf kleinen Bildschirmen */
+  }
+
+  button {
+    width: 100%; /* Volle Breite für die Buttons */
+  }
+
+  .btn-success {
+    margin-bottom: 10px; /* Abstand zwischen den Buttons */
+    width: 100%; /* Breite füllt den verfügbaren Platz */
+  }
+
+}
+
+/* Modal Styles */
+.modal {
+  display: none; /* Versteckt das Modal standardmäßig */
+  position: fixed; /* Fixiert das Modal relativ zum Viewport */
+  z-index: 1; /* Stellt sicher, dass das Modal über anderen Inhalten liegt */
+  left: 0;
+  top: 0;
+  width: 100%; /* Volle Breite */
+  height: 100%; /* Volle Höhe */
+  overflow: auto; /* Ermöglicht das Scrollen bei Überlauf */
+  background-color: rgb(0,0,0); /* Fallback für den Hintergrund */
+  background-color: rgba(0,0,0,0.4); /* Schwarzer Hintergrund mit Transparenz */
+}
+
+.modal.show {
+  display: block; /* Zeigt das Modal an, wenn die Klasse 'show' hinzugefügt wird */
+}
+
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto; /* Zentriert das Modal */
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%; /* Breite des Modal */
+  max-width: 500px; /* Maximale Breite des Modal */
+  border-radius: 8px; /* Abgerundete Ecken */
+  box-shadow: 0 2px 10px rgba(0,0,0,0.1); /* Schatten um das Modal */
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

@@ -1,0 +1,139 @@
+/* Add application styles & imports to this file! */
+/* Angular Material */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
+
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('/assets/Herunterladen.jpg');
+  color: white;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 300px; /* Feste Höhe für das Header-Bild */
+}
+
+.header-content {
+  display: flex;
+  justify-content: center; /* Zentriert den Inhalt horizontal */
+  align-items: flex-end; /* Richtet den Inhalt unten im Container aus */
+  text-align: center; /* Text zentriert ausrichten */
+  padding: 20px;
+  height: 100%; /* Höhe des Containers füllt den Header */
+
+  margin-bottom: 10px;
+}
+
+.header h1 {
+  margin: 0;
+  font-size: 1.5em; /* Standard-Schriftgröße für mobile Geräte */
+}
+
+.tab {
+  display: flex;
+  justify-content: center; /* Zentriert die Buttons im inneren Container */
+  background-color: #2aa192;
+  width: 100%;
+  padding: 10px 0; /* Füge oben und unten Padding hinzu */
+  position: relative; /* Ermöglicht die absolute Positionierung der Buttons */
+}
+
+.tab button {
+  margin: 0 10px; /* Abstand zwischen den Buttons */
+}
+
+.tab button:hover {
+  background-color: #a5a4a4;
+}
+
+.Button {
+  background-color: white;
+  color: black;
+}
+
+.footer {
+  background-color: #797575;
+  text-align: center;
+  padding: 10px;
+  width: 100%;
+  box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+  overflow-x: hidden; /* Verhindert horizontales Scrollen */
+  white-space: nowrap; /* Verhindert Umbrüche innerhalb des Footers */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .header {
+    height: 200px; /* Reduziert die Höhe für kleinere Bildschirme */
+    background-size: auto 100%; /* Passt die Größe des Bildes an */
+    background-position: top center; /* Zentriert das Bild */
+  }
+
+  .header-content {
+    padding: 10px;
+    margin-bottom: 10px; /* Reduziert den unteren Abstand für kleinere Bildschirme */
+  }
+  
+  .header h1 {
+    font-size: 1.5em; /* Kleinere Schriftgröße für den Titel */
+  }
+  
+  .tab {
+    flex-direction: column; /* Vertikale Anordnung der Buttons */
+    padding: 5px 0; /* Weniger Padding für kleinere Bildschirme */
+    align-items: center; /* Zentriert die Buttons horizontal */
+  }
+
+  .tab button {
+    margin: 5px 0; /* Abstand zwischen den Buttons für kleinere Bildschirme */
+    width: 90%; /* Breitere Buttons für bessere Touch-Bedienung */
+  }
+
+  .footer {
+    padding: 10px 5px; /* Mehr Padding für bessere Lesbarkeit */
+    text-align: center; /* Zentriert den Text im Footer */
+    white-space: normal; /* Erlaubt Umbrüche bei langen Texten */
+  }
+
+  .footer a {
+    display: inline-block; /* Links als Block-Elemente anzeigen */
+    margin: 0 5px; /* Abstand zwischen den Links */
+  }
+}
+
+/* Desktop Styles */
+@media (min-width: 768px) {
+  .header {
+    height: 400px; /* Erhöht die Höhe für größere Bildschirme */
+    background-size: cover; /* Skaliert das Hintergrundbild */
+    background-position: center center; /* Zentriert das Bild */
+  }
+
+  .header-content {
+    padding: 20px;
+    margin-bottom: 20px; /* Fügt unteren Abstand für größere Bildschirme hinzu */
+  }
+  
+  .header h1 {
+    font-size: 2.5em; /* Größere Schriftgröße für den Titel auf größeren Bildschirmen */
+  }
+
+  .tab {
+    flex-direction: row; /* Horizontale Anordnung der Buttons */
+  }
+
+  .tab button {
+    width: auto; /* Standardbreite für die Buttons auf größeren Bildschirmen */
+  }
+
+  .footer {
+    text-align: center; /* Zentriert den Text im Footer */
+    display: block; /* Standardblock für den Footer */
+  }
+
+  .footer a {
+    margin: 0 5px; /* Abstand zwischen den Links */
+  }
+}

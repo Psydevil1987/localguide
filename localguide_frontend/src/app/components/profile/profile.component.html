@@ -1,0 +1,58 @@
+<div class="profile-container">
+  <div class="profile-image">
+    <img src="/assets/Profil_Links.png" alt="Profilbild">
+  </div>
+  
+  <!-- Inhalt der Profildaten -->
+  <div class="profile-form-container">
+    <form #profileForm="ngForm" (ngSubmit)="onSubmit()" class="profile-form">
+      <div class="form-group">
+        <label for="idp_uid">Deine Anmelde ID</label>
+        <input type="text" class="form-control" id="idp_uid" required [(ngModel)]="authService.userModel.idp_uid" name="idp_uid">
+        
+        <label for="surname">Nachname</label>
+        <input type="text" class="form-control" id="surname" required [(ngModel)]="authService.userModel.surename" name="surename">
+        
+        <label for="givenname">Vorname</label>
+        <input type="text" class="form-control" id="givenname" required [(ngModel)]="authService.userModel.givenname" name="givenname">
+
+        <label for="age">Dein Alter</label>
+        <input type="text" class="form-control" id="age" required [(ngModel)]="authService.userModel.age" name="age">
+
+        <label for="hobbies">Was sind deine Hobbys</label>
+        <input type="text" class="form-control" id="hobbies" required [(ngModel)]="authService.userModel.hobbies" name="hobbies">
+
+        <label for="city">Deine Stadt</label>
+        <input type="text" class="form-control" id="city" required [(ngModel)]="authService.userModel.city" name="city">
+
+        <label for="about">Was zeigst du von deiner Stadt</label>
+        <input type="text" class="form-control" id="about" required [(ngModel)]="authService.userModel.about" name="about">
+
+        <div>
+          <label for="file">Hier solltest du ein Bild hochladen, das dich repräsentiert wie du bist</label>
+          <input type="file" accept="image/jpeg" class="file-upload" (change)="onProfilePictureUpload($event)">
+        </div>
+        <div>
+          <img [src]="authService.userModel.picture" class="preview">
+        </div>
+
+        <!-- Button Container -->
+        <div class="button-container">
+          <button type="submit" class="btn btn-success">Speichern</button>
+          <button type="button" class="btn btn-success" (click)="openModal()">Jetzt verifizieren</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- Modal -->
+<div id="verificationModal" class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Jetzt Kontakt mit uns aufnehmen!</h2>
+    <a href="https://teams.microsoft.com/l/call/0/0?users=felix.bellut@fom-net.de&withVideo=true" target="_blank" class="btn btn-success">
+      Videocall jetzt starten
+    </a>
+  </div>
+</div>

@@ -1,0 +1,162 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.feature-container {
+    display: flex;
+    flex-direction: column; /* Standardmäßig vertikale Anordnung für kleine Bildschirme */
+    justify-content: space-around;
+    align-items: center;
+    background-color: #000; /* Hintergrundfarbe für den Feature-Container */
+    padding: 20px;
+    margin-left: auto; /* Zentriert den Container horizontal */
+    margin-right: auto; /* Zentriert den Container horizontal */
+    width: 100%;
+    box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 768px) {
+    .feature-container {
+        flex-direction: row; /* Horizontale Anordnung für größere Bildschirme */
+    }
+}
+
+.feature {
+    text-align: left;
+    flex: 1; /* Gibt allen Features die Flexibilität, sich auszudehnen */
+    padding: 10px 20px; /* Innenabstand für die Texte innerhalb der Features */
+    box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+    width: 100%; /* Stellt sicher, dass die Features die volle Breite einnehmen */
+    max-width: 300px; /* Maximale Breite für die Features */
+}
+
+.feature-number {
+    color: #ffffff; /* Farbe der Nummern */
+    margin-bottom: 5px;
+    font-size: 1.5em; /* Schriftgröße der Nummern */
+    font-weight: bold;
+}
+
+.feature h2 {
+    color: #ffffff; /* Farbe der Überschriften */
+    font-size: 1.2em; /* Schriftgröße der Überschriften */
+    margin-bottom: 10px;
+}
+
+.feature p {
+    color: #ffffff; /* Farbe der Texte */
+    font-size: 0.9em; /* Schriftgröße der Texte */
+}
+
+.tab {
+    display: flex;
+    justify-content: center; /* Zentriert die Buttons im inneren Container */
+    background-color: #2aa192;
+    width: 100%;
+    padding: 22px 0; /* Füge oben und unten Padding hinzu */
+    position: relative; /* Ermöglicht die absolute Positionierung der Buttons */
+  }
+  
+
+.content-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 2000px;
+    margin: auto;
+    padding: 0 20px; /* Fügt Padding hinzu, um den Inhalt nicht abzuschneiden */
+    box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+.image-text-container {
+    display: flex;
+    flex-direction: column; /* Standardmäßig vertikale Anordnung für kleine Bildschirme */
+    align-items: center; /* Inhalte vertikal zentrieren */
+    justify-content: space-between; /* Maximiert den Abstand zwischen den Kindern */
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%; /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 768px) {
+    .image-text-container {
+        flex-direction: row; /* Horizontale Anordnung für größere Bildschirme */
+    }
+}
+
+.image-side {
+    width: 100%; /* Standardbreite 100% für kleine Bildschirme */
+    max-width: 600px; /* Maximale Breite des Bildes */
+}
+
+.logo {
+    width: 100%; /* Standardbreite 100% für kleine Bildschirme */
+    max-width: 200px; /* Maximale Breite des Bildes */
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 768px) {
+    .image-side {
+        width: 50%; /* Für größere Bildschirme wird die Breite auf 50% gesetzt */
+    }
+}
+
+.text-side-left {
+    flex: 1; /* Erlaubt dem Text, den verfügbaren Platz zu nutzen */
+    padding-left: 20px; /* Fügt Abstand zwischen Bild und Text hinzu */
+}
+
+.text-side-right {
+    width: 100%; /* Standardbreite 100% für kleine Bildschirme */
+    padding: 20px;
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 768px) {
+    .text-side-right {
+        width: 50%; /* Für größere Bildschirme wird die Breite auf 50% gesetzt */
+    }
+}
+
+.text-image-container2 {
+    display: flex;
+    flex-direction: column; /* Standardmäßig vertikale Anordnung für kleine Bildschirme */
+    align-items: center; /* Inhalte vertikal zentrieren */
+    justify-content: space-between; /* Maximiert den Abstand zwischen den Kindern */
+    padding: 20px;
+    margin-top: 20px;
+    width: 100%; /* Stellt sicher, dass der Container die volle Breite einnimmt */
+    box-sizing: border-box; /* Schließt Padding und Border in die Breitenberechnung ein */
+}
+
+/* Anpassungen für größere Bildschirme */
+@media (min-width: 768px) {
+    .text-image-container2 {
+        flex-direction: row; /* Horizontale Anordnung für größere Bildschirme */
+    }
+}
+
+.first-black-bar {
+    margin-top: 0px; /* Fügt den oberen Abstand hinzu */
+}
+
+.black-bar {
+    background-color: black;
+    color: white;
+    width: 100%;
+    text-align: center;
+    padding: 10px 0; /* Fügt vertikalen Abstand innerhalb des Balkens hinzu */
+}
+
+.black-bar-text {
+    color: white;
+    margin: 0;
+    font-size: 1em;
+}

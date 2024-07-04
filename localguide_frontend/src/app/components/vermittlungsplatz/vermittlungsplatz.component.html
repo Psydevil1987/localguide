@@ -1,0 +1,77 @@
+<div class="container">
+  <!-- Inhalt des Suchbereich+Knopf -->
+  <div class="content-area">
+    <h1>Finde deinen Local Guide</h1>
+    <div class="search-box">
+      <input type="text" (change)='searchCityParam=searchCity.value' (keyup.enter)="searchguide()" #searchCity placeholder="Stadt eingeben" id="zipcode">
+      <button (click)="searchguide()">Suche starten</button>
+    </div>
+    <div *ngIf="searchState === 'NOSEARCH'">
+      <p>Gebe eine Stadt ein und klicke auf "Suche starten".</p>
+    </div>
+
+    <div *ngIf="searchState === 'SEARCH'">
+      <p>Spannende Angebote werden gesucht.</p>
+    </div>
+
+    <div *ngIf="searchState === 'NOTFOUND'">
+      <p>Leider wurden für die Stadt noch keine Guids gefunden.</p>
+    </div>
+    <div *ngIf="searchState === 'FOUND'">
+      <mat-paginator itemsPerPageLabel="Guides pro Seite" [pageSizeOptions]="[10, 25, 50,100,1000]" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="pageChanged($event)"/>
+    </div>
+    <p></p>
+
+    <!-- Inhalt des Anzeigensuchbereichs -->
+    <div *ngFor="let dataElem of data" class="guide-container">
+      <img [src]="dataElem.picture" alt="Beschreibender Text für das Bild" class="guide-image"/>
+      <div class="guide-info">
+        <p class="Texttitel">Name des Guides:</p>
+        <p class="Text">{{ dataElem.surename }} {{ dataElem.givenname }}</p>
+        <p class="Texttitel">Alter:</p>
+        <p class="Text">{{ dataElem.age }}</p>
+        <p class="Texttitel">Hobbys:</p>
+        <p class="Text">{{ dataElem.hobbies }}</p>
+        <p class="Texttitel">Was du von {{ dataElem.surename }} erwarten kannst:</p>
+        <p class="Text">{{ dataElem.about }}</p>
+        <p></p>
+        <button (click)="openModal()" *ngIf="isAuthentficated  && authService.userModel.is_verified">Jetzt {{ dataElem.surename }} kontaktieren</button>
+      </div>
+    </div>    
+
+    <div *ngIf="searchState === 'FOUND'">
+      <mat-paginator itemsPerPageLabel="Guides pro Seite" [pageSizeOptions]="[10, 25, 50,100,1000]" [length]="totalItems" [pageSize]="pageSize" [pageIndex]="currentPage" (page)="pageChanged($event)"/>
+    </div>
+  </div>
+
+  
+  <div class="menu-area">
+    <!-- Inhalt des Menübereichs -->
+    <button [hidden]="this.isAuthentficated" mat-button [routerLink]="'../login'">
+      <mat-icon aria-hidden="false">login</mat-icon>
+      Login
+    </button>
+    <button [hidden]="!this.isAuthentficated" mat-button [routerLink]="'../profile'">
+      <mat-icon aria-hidden="false">account_circle</mat-icon>
+      Profil
+    </button>
+    <button [hidden]="!this.isAuthentficated" [style.marginTop.px]="5" mat-button [routerLink]="'../logout'">
+      <mat-icon aria-hidden="false">logout</mat-icon>
+      Logout
+    </button>
+  </div>
+
+  
+<!-- Modal -->
+<div id="CommunicationModal" class="modal" [ngClass]="{'show': showModal}">
+  <div class="modal-content">
+    <span class="close" (click)="closeModal()">&times;</span>
+    <h2>Nehmen Sie gerne Kontakt auf</h2>
+    <a href="https://teams.microsoft.com/l/call/0/0?users=felix.bellut@fom-net.de&withVideo=true" target="_blank" class="btn btn-success">
+      Videocall jetzt starten
+    </a>
+  </div>
+</div>
+
+
+</div>

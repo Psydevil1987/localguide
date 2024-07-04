@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "localguide_frontend"
+		},
+		{
+			"path": "localguide_backend"
+		},
+		{
+			"path": "localguide_ngix"
+		},
+		{
+			"path": "localguide_tools"
+		}
+	],
+	"settings": {}
+}
