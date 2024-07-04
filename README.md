@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="./Logo.jpg)" />
+  <img src="./Logo.jpg" />
 </div>
 
 # Localguide  
