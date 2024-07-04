@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="[https://github.com/Psydevil1987/localguide/blob/master/Logo.jpg](https://github.com/Psydevil1987/localguide/blob/master/Logo.jpg)" />
+  <img src="./Logo.jpg)" />
 </div>
 
 # Localguide  
